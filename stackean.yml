@@ -1,0 +1,18 @@
+type: install
+name: Stackean Flask Restful
+engine: python
+
+nodes:
+  nodeType: apache2-python
+  displayName: Flask Node
+  diskLimit: 5
+  cloudlets: 1
+  flexibleCloudlets: 4
+
+onInstall:
+  deploy:
+    archive: https://github.com/stackean/sample-flask-restful/archive/main.zip
+    name: stackean-flask-restful
+    context: ROOT
+  cmd:
+    - python3 -m pip install -r requirements.txt
